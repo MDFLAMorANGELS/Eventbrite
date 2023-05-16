@@ -2,7 +2,15 @@
     <h2 class="text-center">Bienvenue sur EventBrite !</h2>
     <p>Nous sommes ravis de vous accueillir dans notre univers en ligne. Ici, vous découvrirez une multitude d'Events passionnants et d'expériences uniques.</p>
 </div>
+
+<% if user_signed_in? %>
+
 <a href="<%= new_event_path%>"><button class="btn btn-danger shadow">Créer ton Event</button></a>
+
+<% else %>
+<a href="<%= new_user_session_path%>"><button class="btn btn-danger shadow">Créer ton Event</button></a>
+
+<% end %>
 
 <div class="d-flex flex-wrap justify-content-center align-items-center my-2">
     <% @events.each do |obj| %>

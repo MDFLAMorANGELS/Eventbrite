@@ -38,3 +38,21 @@
     background: #2222228e;
     color: white;
 }
+.field{
+    margin: 20px;
+}
+.anim{
+    background-color: #dc3545;
+    border-radius: 50px;
+    padding: 5px;
+    transition: all 2.5s ease-out;
+}
+.anim:hover{
+    background-color: #1CA884;
+    transform: scale(1.2);
+    border-radius: 50%;
+    padding: 80px;
+    margin: 30px;
+    -webkit-box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 6px 5px 8px 5px rgba(0,0,0,0.94); 
+    box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 6px 5px 8px 5px rgba(0,0,0,0.94);
+}
