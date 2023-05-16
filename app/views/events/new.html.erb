@@ -1,0 +1,56 @@
+<div class="container py-3 ">
+    <h2 class="text-center">Créer ton Event</h2>
+    <div class=" container">
+    <%= form_with(url: events_path, method: :post) do |form| %>
+        <% if flash[:danger] %>
+            <div class="alert alert-danger">
+            <%= flash[:danger] %>
+            </div>
+        <% end %>
+        <div class="module-border-wrap">
+            <div class="row-1 d-flex justify-content-around py-5  rounded-3 module">
+                <div class="col-3">
+
+                <div class="form-group orm-outline mb-4">
+                    <%= form.label :title, class:"form-label" %>
+                    <%= form.text_field :title, class: "form-control", placeholder:"Titre" %>
+                </div>
+
+                <div class="form-group orm-outline mb-4">
+                    <%= form.label :started_at, class:"form-label" %>
+                    <%= form.time_field :started_at, class: "form-control", placeholder:"date de début" %>
+                </div>
+
+                <div class="form-group orm-outline mb-4">
+                    <%= form.label :duration, class:"form-label" %>
+                    <%= form.number_field :duration, class: "form-control", placeholder:"Durée" %>
+                </div>
+
+                </div>
+                <div class="col-3">
+
+                <div class="form-group orm-outline mb-4">
+                    <%= form.label :description, class:"form-label" %>
+                    <%= form.text_area :description, class: "form-control", placeholder:"Description" %>
+                </div>
+
+                <div class="form-group orm-outline mb-4">
+                    <%= form.label :price, class:"form-label" %>
+                    <%= form.number_field :price, class: "form-control", placeholder:"Prix" %>
+                </div>
+
+                <div class="form-group orm-outline mb-4">
+                    <%= form.label :location, class:"form-label" %>
+                    <%= form.text_field :location, class: "form-control", placeholder:"Location" %>
+                </div>
+
+                <div class="form-group">
+                    <%= form.submit "Créer", class: "btn btn-block fa-lg  mb-3", id: "dropdownMenuButton2" %> 
+                </div>
+                <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container py-3 col-6">
+    <h2 class="text-center">Bienvenue sur EventBrite !</h2>
+    <p>Nous sommes ravis de vous accueillir dans notre univers en ligne. Ici, vous découvrirez une multitude d'Events passionnants et d'expériences uniques.</p>
+</div>
+<a href="<%= new_event_path%>"><button class="btn btn-danger shadow">Créer ton Event</button></a>
+
+<div class="d-flex flex-wrap justify-content-center align-items-center my-2">
+    <% @events.each do |obj| %>
+        <div class="card-event p-2 my-5 text-center rounded-3 col-5 container mx-4">
+            <div class="card" >
+                <div class="card-body">
+                    <h5 class="card-title">Event : <%= obj.title %></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Date : <%= obj.start_date.strftime('%Y-%m-%d %H:%M') %></li>
+                    <li class="list-group-item">Prix : <%= obj.price %> €</li>
+                </ul>
+                <div class="card-body">
+                     <%= link_to "Voir plus", event_path(obj.id), class:"card-link link-danger" %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div> 
