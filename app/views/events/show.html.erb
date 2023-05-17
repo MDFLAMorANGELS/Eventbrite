@@ -5,6 +5,10 @@
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Date : <%=  Event.find(params[:id]).start_date.strftime('%Y-%m-%d %H:%M') %></li>
+            <li class="list-group-item">Créateur : 
+                <% user = User.find(Event.find(params[:id]).user_id) %>
+                <%= user.email %>
+            </li>
             <li class="list-group-item">Prix : <%=  Event.find(params[:id]).price %> €</li>
             <li class="list-group-item">Location : <%=  Event.find(params[:id]).location %></li>
             <li class="list-group-item">Description : <%=  Event.find(params[:id]).description %></li>

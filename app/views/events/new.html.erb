@@ -54,3 +54,10 @@
         </div>
     </div>
 </div>
+<!-- events/new.html.erb -->
+
+<% if flash[:error] %>
+  <div class="alert alert-danger">
+    <%= flash[:error] %>
+  </div>
+<% end %>

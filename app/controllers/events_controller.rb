@@ -11,7 +11,14 @@ class EventsController < ApplicationController
 
   def create
     puts params
-    Event.create(title: params[:title],start_date: params[:started_at],duration: params[:duration],description: params[:description],price: params[:price],location: params[:location])
+    puts "$ #{current_user.id} $"
+    event = Event.new(title: params[:title],start_date: params[:started_at],duration: params[:duration],description: params[:description],price: params[:price],location: params[:location])
+    event.user_id = current_user.id
+    if event.save
     redirect_to root_path, notice: "L'event a été créé avec succès."
+    else
+      flash[:error] = event.errors.full_messages.join(', ')
+      redirect_to new_event_path
+    end
   end
 end
