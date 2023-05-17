@@ -12,6 +12,10 @@ gem "table_print"
 
 gem 'devise'
 
+gem 'stripe'
+
+gem 'dotenv'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

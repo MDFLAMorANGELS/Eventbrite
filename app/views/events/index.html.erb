@@ -3,6 +3,14 @@
     <p>Nous sommes ravis de vous accueillir dans notre univers en ligne. Ici, vous découvrirez une multitude d'Events passionnants et d'expériences uniques.</p>
 </div>
 
+<div class="my-div">
+    <% if notice %>
+    <div class="notice mx-1 col-10 text-center rounded-2 p-2">
+    <%= notice %>
+    </div>
+    <% end %>
+</div>
+
 <% if user_signed_in? %>
 
 <a href="<%= new_event_path%>"><button class="btn btn-danger shadow">Créer ton Event</button></a>
@@ -14,7 +22,7 @@
 
 <div class="d-flex flex-wrap justify-content-center align-items-center my-2">
     <% @events.each do |obj| %>
-        <div class="card-event p-2 my-5 text-center rounded-3 col-5 container mx-4">
+        <div class="card-event p-2 my-5 text-center rounded-3 col-3 container mx-4">
             <div class="card" >
                 <div class="card-body">
                     <h5 class="card-title">Event : <%= obj.title %></h5>
@@ -30,3 +38,10 @@
         </div>
     <% end %>
 </div> 
+
+<script>
+    setTimeout(function() {
+      var myDiv = document.querySelector('.my-div');
+      myDiv.classList.add('hidden');
+    }, 5000);
+</script>

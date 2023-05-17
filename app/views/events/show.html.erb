@@ -9,5 +9,6 @@
             <li class="list-group-item">Location : <%=  Event.find(params[:id]).location %></li>
             <li class="list-group-item">Description : <%=  Event.find(params[:id]).description %></li>
         </ul>
+        <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: Event.find(params[:id]).price), class: "btn btn-primary m-2 p-2", data: {turbo: false} %>
     </div>
 </div>
